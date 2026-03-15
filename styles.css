@@ -60,9 +60,9 @@ nav ul li a:hover, .active { color: var(--primary); }
     padding: 1rem 2rem;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
-    display: inline-block;
+    display: inline-flex;
     margin-right: 1rem;
+	border-radius: 12px;
 }
 
 /* Grid Cennika */
@@ -262,10 +262,11 @@ nav {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    border-radius: 8px;
+    border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px); /* Efekt rozmycia za przyciskiem */
     transition: all 0.3s ease;
+	margin-top: 25px;
 }
 
 .btn-ig:hover {
@@ -449,21 +450,4 @@ footer p {
         word-wrap: break-word; /* Łamanie długich słów */
     }
 
-    /* 3. Przyciski w kolumnie */
-    .cta-buttons {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 10px !important;
-        width: 100% !important;
-    }
-
-    .btn-primary, .btn-ig {
-        width: 90% !important; /* Prawie cała szerokość */
-        padding: 55px 50px !important;
-        font-size: 1rem !important;
-        margin: 0 !important;
-        display: flex !important;
-        justify-content: center !important;
-    }
 }
