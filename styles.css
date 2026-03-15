@@ -476,3 +476,11 @@ footer p {
 
 }
 
+
+.logo a,
+.logo a:visited,
+.logo a:hover,
+.logo a:active {
+    text-decoration: none;
+    color: inherit;
+}
