@@ -443,13 +443,13 @@ footer p {
         width: 100%;
     }
 
-    .cta-buttons a {
-        width: 100%; /* Przyciski na całą szerokość */
-        max-width: 280px; /* Nie za szerokie */
-        text-align: center;
-        margin-right: 0 !important;
-        padding: 1rem 0 !important;
-    }
+	.cta-buttons a {
+		width: auto;
+		min-width: 220px;
+		text-align: center;
+		padding: 0 25px;
+		height: 52px;
+	}
 }
 
 @media (max-width: 480px) {
