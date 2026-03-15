@@ -1,0 +1,467 @@
+:root {
+    --primary: #d4ff00; /* Neonowa limonka */
+    --bg: #0a0a0a;
+    --card-bg: #1a1a1a;
+    --text: #ffffff;
+    --text-dim: #a0a0a0;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Nawigacja */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    align-items: center;
+}
+
+.logo { font-weight: 900; font-size: 1.5rem; }
+.logo span { color: var(--primary); }
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 2rem; }
+nav ul li a { color: var(--text); text-decoration: none; font-weight: 700; transition: 0.3s; }
+nav ul li a:hover, .active { color: var(--primary); }
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80') no-repeat center/cover;
+}
+
+.hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 1.5rem; }
+.hero h1 span { color: var(--primary); }
+
+.btn-primary {
+    background: var(--primary);
+    color: black;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+/* Grid Cennika */
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 5%;
+}
+
+.price-card {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+.featured { border: 2px solid var(--primary); transform: scale(1.05); }
+
+/* Efekt Sticky Nav */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+.nav-scrolled {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5%;
+    border-bottom: 1px solid var(--primary);
+}
+
+/* Animacje wejścia (Scroll Reveal) */
+.reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.revealed {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Stylizacja Hamburgera na Mobile */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex !important; /* Musi być flex */
+        position: fixed !important;
+        right: 0 !important;
+        top: 0 !important;
+        height: 100vh !important;
+        width: 100% !important;
+        background: #0a0a0a !important; /* Kolor tła strony */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+        z-index: 999;
+        margin: 0;
+    }
+
+    .nav-links.open {
+        transform: translateX(0) !important;
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .nav-links li a {
+        font-size: 2rem !important;
+        color: white !important;
+        text-decoration: none;
+    }
+
+    .hamburger {
+        display: block !important;
+        position: relative;
+        z-index: 1000;
+        cursor: pointer;
+    }
+}
+
+/* Animacja krzyżyka w hamburgerze */
+.toggle .line:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+.toggle .line:nth-child(2) { opacity: 0; }
+.toggle .line:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+/* Layout Helpers */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: block; /* Upewniamy się, że nie jest ukryty */
+}
+
+.section-padding { padding: 8rem 0; }
+.text-center { text-align: center; }
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* About Hero */
+.about-hero {
+    height: 50vh;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Bio Section */
+.bio-image img {
+    width: 100%;
+    border-radius: 20px;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+
+.bio-image img:hover { filter: grayscale(0%); }
+
+.stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.label { font-size: 0.9rem; color: var(--text-dim); }
+
+/* Philosophy Cards */
+.phi-card {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border-bottom: 4px solid var(--primary);
+}
+
+.phi-card h3 { margin-bottom: 1rem; color: var(--primary); }
+
+/* Call to Action Section */
+.cta-section {
+    background: var(--primary);
+    padding: 5rem 5%;
+    text-align: center;
+    color: black;
+}
+
+.cta-section h2 { font-size: 3rem; margin-bottom: 2rem; }
+.cta-section .btn-primary { background: black; color: white; }
+
+/* Styl dla półprzezroczystego przycisku Instagram */
+.btn-ig {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.1); /* Półprzezroczyste tło */
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px); /* Efekt rozmycia za przyciskiem */
+    transition: all 0.3s ease;
+}
+
+.btn-ig:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Nowy układ Features (Kafelek) */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    padding: 10rem 5%;
+}
+
+.feature-card {
+    background: linear-gradient(145deg, #1a1a1a, #111111);
+    padding: 3.5rem 2.5rem;
+    border-radius: 20px;
+    text-align: left;
+    position: relative;
+    border: 1px solid #222;
+    transition: 0.4s;
+}
+
+.feature-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(212, 255, 0, 0.1); /* Bardzo jasny kolor primary */
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.feature-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    color: var(--primary);
+}
+
+.feature-card p {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Poprawiona Stopka */
+footer {
+    padding: 4rem 5%;
+    border-top: 1px solid #222;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+footer p {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+/* Mini Hero dla podstron */
+.mini-hero {
+    height: 50vh !important; /* Niższy nagłówek na podstronach */
+    min-height: 300px;
+}
+
+/* Układ Grid dla sekcji O mnie */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 10rem 0;
+}
+
+.bio-image img {
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid #333;
+}
+
+.bio-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.bio-text p {
+    margin-bottom: 1.5rem;
+    color: var(--text-dim);
+    font-size: 1.1rem;
+}
+
+/* Cennik dodatki */
+.price-tag {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--text);
+    margin: 1rem 0;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    padding: 10rem 0;
+}
+
+@media (max-width: 768px) {
+    .features, .price-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4rem 5% !important;
+        gap: 2rem !important;
+    }
+
+    .feature-card {
+        width: 100%; /* Karta zajmuje całą szerokość kontenera */
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Hero - napisy i przyciski */
+    .hero-content {
+        padding: 0 5%;
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem !important; /* Mniejsza czcionka na telefon */
+        line-height: 1.1;
+        margin-bottom: 1rem;
+    }
+
+    .cta-buttons {
+        display: flex;
+        flex-direction: column; /* Przyciski jeden pod drugim */
+        gap: 1rem;
+        align-items: center;
+        width: 100%;
+    }
+
+    .cta-buttons a {
+        width: 100%; /* Przyciski na całą szerokość */
+        max-width: 280px; /* Nie za szerokie */
+        text-align: center;
+        margin-right: 0 !important;
+        padding: 1rem 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* 1. Wymuszenie, aby nic nie wychodziło poza krawędź ekranu */
+    body, html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 2. Hero Content - mniejszy font i pełna szerokość */
+    .hero-content {
+        padding: 0 15px !important;
+        width: 100% !important;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem !important; /* Mniejszy font */
+        line-height: 1.2 !important;
+        word-wrap: break-word; /* Łamanie długich słów */
+    }
+
+    /* 3. Przyciski w kolumnie */
+    .cta-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+    }
+
+    .btn-primary, .btn-ig {
+        width: 90% !important; /* Prawie cała szerokość */
+        padding: 15px 10px !important;
+        font-size: 1rem !important;
+        margin: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
