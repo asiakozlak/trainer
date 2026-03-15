@@ -451,3 +451,26 @@ footer p {
     }
 
 }
+
+.btn-ig img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.cta-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-primary,
+.btn-ig {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    padding: 0 25px;
+    box-sizing: border-box;
+}
