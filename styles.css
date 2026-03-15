@@ -300,7 +300,7 @@ nav {
 .feature-icon {
     font-size: 3rem;
     font-weight: 900;
-    color: rgba(212, 255, 0, 0.1); /* Bardzo jasny kolor primary */
+    color: var(--secondary); /* Bardzo jasny kolor primary */
     position: absolute;
     top: 20px;
     right: 30px;
@@ -460,7 +460,7 @@ footer p {
 
     .btn-primary, .btn-ig {
         width: 90% !important; /* Prawie cała szerokość */
-        padding: 15px 10px !important;
+        padding: 55px 50px !important;
         font-size: 1rem !important;
         margin: 0 !important;
         display: flex !important;
