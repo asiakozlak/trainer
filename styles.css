@@ -54,16 +54,6 @@ nav ul li a:hover, .active { color: var(--primary); }
 .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 1.5rem; }
 .hero h1 span { color: var(--primary); }
 
-.btn-primary {
-    background: var(--primary);
-    color: black;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-flex;
-    margin-right: 1rem;
-	border-radius: 12px;
-}
 
 /* Grid Cennika */
 .price-grid {
@@ -263,11 +253,23 @@ nav {
     text-decoration: none;
     font-weight: 600;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px); /* Efekt rozmycia za przyciskiem */
     transition: all 0.3s ease;
-	margin-top: 25px;
+	margin-top: 1rem;
 }
+
+.btn-primary {
+    background: var(--primary);
+    color: black;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    margin-right: 1rem;
+	border-radius: 12px;
+}
+
 
 .btn-ig:hover {
     background: rgba(255, 255, 255, 0.2);
@@ -401,7 +403,7 @@ footer p {
     align-items: center;
     justify-content: center;
     height: 52px;
-    padding: 0 25px;
+    padding: 0 25px 0 25px;
     box-sizing: border-box;
 }
 
