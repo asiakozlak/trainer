@@ -1,9 +1,10 @@
 :root {
-    --primary: #d4ff00; /* Neonowa limonka */
+    --primary: #c395a5; /* Neonowa limonka */
     --bg: #0a0a0a;
     --card-bg: #1a1a1a;
     --text: #ffffff;
     --text-dim: #a0a0a0;
+	--secondary: #e5c7d7
 }
 
 html, body {
@@ -248,8 +249,9 @@ nav {
     color: black;
 }
 
-.cta-section h2 { font-size: 3rem; margin-bottom: 2rem; }
+.cta-section h2 { font-size: 3rem; margin-bottom: 2rem; color: var(--secondary); }
 .cta-section .btn-primary { background: black; color: white; }
+
 
 /* Styl dla półprzezroczystego przycisku Instagram */
 .btn-ig {
