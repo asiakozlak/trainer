@@ -461,6 +461,35 @@ footer p {
 		padding: 0 25px;
 		height: 52px;
 	}
+	
+		.grid-1_l {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centruje guzik względem napisu */
+    text-align: center;     /* Centruje samą treść napisu h3 */
+    width: 100%;
+    padding: 1rem 0;        /* Dodaje oddech całej sekcji */
+	position: relative;
+    left: -15px; /* Wartość ujemna przesuwa w lewo, dodatnia w prawo */
+	}
+
+	.btn-third {
+		background-color: #007bff !important;
+		color: white !important;
+		padding: 35px 10px;     /* Duży padding na boki dla efektu z obrazka */
+		border-radius: 20px;    /* Zaokrąglone rogi jak na screenie */
+		text-decoration: none;
+		font-weight: bold;
+		display: inline-block;
+		height: auto;           /* Kluczowe, by padding działał poprawnie */
+		margin-top: 1.5rem;     /* Zastępuje <br> kontrolowanym odstępem */
+	}
+
+	/* Efekt po najechaniu myszką (hover) */
+	.btn-third:hover {
+		background-color: #0056b3 !important; /* Ciemniejszy niebieski */
+		transform: translateY(-2px);          /* Delikatne uniesienie */
+	}
 }
 
 @media (max-width: 480px) {
@@ -499,7 +528,7 @@ footer p {
 	.btn-third {
 		background-color: #007bff !important;
 		color: white !important;
-		padding: 15px 10px;     /* Duży padding na boki dla efektu z obrazka */
+		padding: 35px 10px;     /* Duży padding na boki dla efektu z obrazka */
 		border-radius: 20px;    /* Zaokrąglone rogi jak na screenie */
 		text-decoration: none;
 		font-weight: bold;
