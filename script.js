@@ -35,3 +35,32 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 revealElements.forEach(el => revealObserver.observe(el));
+
+// Konfiguracja danych kontaktowych (rozbite na części)
+const contactData = {
+    prefix: "48",
+    num1: "123",
+    num2: "456",
+    num3: "789",
+    user: "email",
+    domain: "example.com"
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    const fullNumber = contactData.prefix + contactData.num1 + contactData.num2 + contactData.num3;
+    const formattedNumber = `+${contactData.prefix} ${contactData.num1} ${contactData.num2} ${contactData.num3}`;
+    const fullEmail = `${contactData.user}@${contactData.domain}`;
+
+    // Uzupełnienie tekstu na stronie
+    const phoneTextElem = document.getElementById("phone-text-placeholder");
+    const emailElem = document.getElementById("email-placeholder");
+    const whatsappBtn = document.getElementById("whatsapp-btn");
+
+    if (phoneTextElem) phoneTextElem.innerText = formattedNumber;
+    if (emailElem) emailElem.innerText = fullEmail;
+
+    // Dynamiczne przypisanie linku do WhatsApp
+    if (whatsappBtn) {
+        whatsappBtn.href = `https://wa.me/${fullNumber}`;
+    }
+});

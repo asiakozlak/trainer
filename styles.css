@@ -30,8 +30,11 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 2rem 5%;
+    padding: 1rem 5%;
     align-items: center;
+	background: rgba(255, 255, 255, 0.1); /* półprzezroczyste tło */
+    backdrop-filter: blur(10px); /* GŁÓWNY EFEKT */
+    -webkit-backdrop-filter: blur(10px); /* Safari */
 }
 
 .logo { font-weight: 900; font-size: 1.5rem; }
@@ -346,9 +349,15 @@ footer p {
 .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 1rem;
     align-items: center;
-    padding: 10rem 0;
+    padding: 2rem 0;
+	
+	/* KLUCZOWE DOPISKI: */
+    max-width: 500px;    /* Kontener nie będzie szerszy niż 900px */
+    margin: 0 auto;      /* Wyśrodkowanie kontenera na stronie */
+	justify-content: center; /* Przesuwa kolumny do środka osi poziomej */
+	text-align: center;
 }
 
 .bio-image img {
@@ -501,7 +510,29 @@ footer p {
 
 .grid-1 {
     display: flex;
-    flex-direction: column; /* zdjęcie nad tekstem */
-    align-items: center;    /* wyśrodkowanie */
-    text-align: center;
+    flex-direction: column;
+    align-items: center;    /* Centruje guzik względem napisu */
+    text-align: center;     /* Centruje samą treść napisu h3 */
+    width: 100%;
+    padding: 1rem 0;        /* Dodaje oddech całej sekcji */
+	position: relative;
+    left: -15px; /* Wartość ujemna przesuwa w lewo, dodatnia w prawo */
+}
+
+.btn-third {
+    background-color: #007bff !important;
+    color: white !important;
+    padding: 15px 10px;     /* Duży padding na boki dla efektu z obrazka */
+    border-radius: 20px;    /* Zaokrąglone rogi jak na screenie */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    height: auto;           /* Kluczowe, by padding działał poprawnie */
+    margin-top: 1.5rem;     /* Zastępuje <br> kontrolowanym odstępem */
+}
+
+/* Efekt po najechaniu myszką (hover) */
+.btn-third:hover {
+    background-color: #0056b3 !important; /* Ciemniejszy niebieski */
+    transform: translateY(-2px);          /* Delikatne uniesienie */
 }
