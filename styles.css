@@ -1,5 +1,5 @@
 :root {
-    --primary: #c395a5; /* Neonowa limonka */
+    --primary: #c395a5; /* różowe limonka */
     --bg: #0a0a0a;
     --card-bg: #1a1a1a;
     --text: #ffffff;
@@ -474,7 +474,6 @@ footer p {
 	}
 
 	.btn-third {
-		background-color: #007bff !important;
 		color: white !important;
 		padding: 35px 10px;     /* Duży padding na boki dla efektu z obrazka */
 		border-radius: 20px;    /* Zaokrąglone rogi jak na screenie */
@@ -487,7 +486,6 @@ footer p {
 
 	/* Efekt po najechaniu myszką (hover) */
 	.btn-third:hover {
-		background-color: #0056b3 !important; /* Ciemniejszy niebieski */
 		transform: translateY(-2px);          /* Delikatne uniesienie */
 	}
 }
@@ -526,7 +524,6 @@ footer p {
 	}
 
 	.btn-third {
-		background-color: #007bff !important;
 		color: white !important;
 		padding: 35px 10px;     /* Duży padding na boki dla efektu z obrazka */
 		border-radius: 20px;    /* Zaokrąglone rogi jak na screenie */
@@ -539,12 +536,31 @@ footer p {
 
 	/* Efekt po najechaniu myszką (hover) */
 	.btn-third:hover {
-		background-color: #0056b3 !important; /* Ciemniejszy niebieski */
 		transform: translateY(-2px);          /* Delikatne uniesienie */
 	}
 
+.grid-1-phone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centruje elementy w pionowym układzie */
+    text-align: center;
+    width: 100%;
+    padding: 1rem 0;
+    position: relative;
 }
 
+/* To sprawi, że guzik w środku zajmie całą szerokość */
+.grid-1-phone a {
+    width: 100%;            /* Rozciąga guzik na 100% szerokości rodzica */
+    max-width: 400px;       /* Opcjonalnie: ogranicza szerokość, by guzik nie był nienaturalnie długi na tablecie */
+    display: flex;          /* Pozwala na centrowanie tekstu wewnątrz rozciągniętego guzika */
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;        /* Usuwa boczny margines, który mógłby przesuwać guzik */
+    box-sizing: border-box; /* Gwarantuje, że padding nie powiększy szerokości ponad 100% */
+}
+
+}
 
 .logo a,
 .logo a:visited,
@@ -589,8 +605,8 @@ position: relative;
 
 
 .btn-third {
-    background-color: #007bff !important;
-    color: white !important;
+    background-color: #7fb5a2 !important;
+    color: black !important;
     padding: 25px 10px;     /* Duży padding na boki dla efektu z obrazka */
     border-radius: 20px;    /* Zaokrąglone rogi jak na screenie */
     text-decoration: none;
@@ -602,6 +618,39 @@ position: relative;
 
 /* Efekt po najechaniu myszką (hover) */
 .btn-third:hover {
-    background-color: #0056b3 !important; /* Ciemniejszy niebieski */
+    background-color: #59a68b !important; /* Ciemniejszy niebieski */
     transform: translateY(-2px);          /* Delikatne uniesienie */
+}
+
+.logo {
+	display: flex;
+	flex-direction: row;
+	column-gap: 1rem;
+	align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-logo-img {
+    /* Tutaj ustawiasz pożądaną wielkość */
+    height: 50px;      /* Stała wysokość jest najbezpieczniejsza dla navbaru */
+    width: auto;       /* Szerokość dostosuje się proporcjonalnie */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Opcjonalnie: efekt po najechaniu */
+.nav-logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Korekta dla urządzeń mobilnych, jeśli logo ma być mniejsze */
+@media (max-width: 768px) {
+    .nav-logo-img {
+        height: 40px; 
+    }
 }
