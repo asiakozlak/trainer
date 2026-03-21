@@ -607,7 +607,7 @@ position: relative;
 .btn-third {
     background-color: #7fb5a2 !important;
     color: black !important;
-    padding: 25px 10px;     /* Duży padding na boki dla efektu z obrazka */
+    padding: 25px 60px;     /* Duży padding na boki dla efektu z obrazka */
     border-radius: 20px;    /* Zaokrąglone rogi jak na screenie */
     text-decoration: none;
     font-weight: bold;
